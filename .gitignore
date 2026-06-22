@@ -1,0 +1,11 @@
+target/
+uploads/
+*.class
+.idea/
+.vscode/
+.DS_Store
+.env.example
+application-prod.properties
+application.properties
+src/main/resources/application.properties
+src/main/resources/application-prod.properties

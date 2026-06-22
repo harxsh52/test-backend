@@ -1,0 +1,16 @@
+package com.interniq.candidate;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface CandidateRepository extends JpaRepository<Candidate, Long>, JpaSpecificationExecutor<Candidate> {
+
+    boolean existsByEmailIgnoreCase(String email);
+
+    Optional<Candidate> findByEmailIgnoreCase(String email);
+
+    List<Candidate> findAllByOrderByCreatedAtDesc();
+}
