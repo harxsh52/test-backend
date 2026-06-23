@@ -15,6 +15,6 @@ COPY --from=build /app/target/*.jar /app/app.jar
 RUN mkdir -p /app/uploads/resumes && chown -R interniq:interniq /app
 
 USER interniq
-EXPOSE 8080
+EXPOSE 10000
 
 ENTRYPOINT ["sh", "-c", "java -jar /app/app.jar --spring.profiles.active=${SPRING_PROFILES_ACTIVE:-prod}"]
