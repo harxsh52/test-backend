@@ -23,6 +23,8 @@ public class PasswordResetService {
     private static final SecureRandom SECURE_RANDOM = new SecureRandom();
     private static final long EXPIRY_MINUTES = 1;
 
+    private final EmailService emailService;
+
     private final PasswordResetTokenRepository passwordResetTokenRepository;
     private final EmailService emailService;
 
