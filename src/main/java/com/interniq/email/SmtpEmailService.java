@@ -1,6 +1,7 @@
 package com.interniq.email;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service("passwordResetSmtpEmailService")
 @RequiredArgsConstructor
+@ConditionalOnProperty(name = "application.email.provider", havingValue = "smtp")
 public class SmtpEmailService implements EmailService {
 
     private final JavaMailSender mailSender;
