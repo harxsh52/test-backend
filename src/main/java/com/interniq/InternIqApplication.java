@@ -41,7 +41,7 @@ public class InternIqApplication {
     }
 
     @Bean
-    @ConditionalOnProperty(name = "application.seed-demo-data", havingValue = "false", matchIfMissing = false)
+    @ConditionalOnProperty(name = "application.seed-demo-data", havingValue = "true", matchIfMissing = false)
     CommandLineRunner seedData(
             UserRepository userRepository,
             DepartmentRepository departmentRepository,
